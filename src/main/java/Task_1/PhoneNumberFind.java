@@ -2,11 +2,7 @@ package Task_1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PhoneNumberFind {
     public static void main(String[] args) throws FileNotFoundException {
