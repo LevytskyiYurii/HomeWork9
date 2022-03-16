@@ -3,10 +3,12 @@ package Task_1;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PhoneNumberFind {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\file.txt");//(123)-456-7890
+        File file = new File("file.txt");//(123)-456-7890
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNext()) {
@@ -19,7 +21,10 @@ public class PhoneNumberFind {
 //
 //            System.out.println(phoneNumbers);
             String number = scanner.nextLine();
-            if (number.contains("-") && !number.isBlank()) System.out.println(number);
+            Pattern pattern = Pattern.compile("\\(?+([0-9]{3})+\\)?+\\s?+-?+([0-9]{3})+(-[0-9]+)",Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(number);
+
+            if (matcher.matches() && !number.isBlank()) System.out.println(number);
 
         }
     }

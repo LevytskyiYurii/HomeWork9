@@ -16,10 +16,10 @@ public class FileReader {
         String jsonPeople = null;
     }
 
-    public static String printPersons(ArrayList<Person> people) {
+    public static void printPersons(ArrayList<Person> people) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonPeople = gson.toJson(people);
-        return jsonPeople;
+        JSONFileWrite.write("Users.json", jsonPeople);
     }
 
 

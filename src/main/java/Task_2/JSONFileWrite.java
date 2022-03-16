@@ -5,27 +5,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class JSONFileWrite {
-    public static void main(String[] args) {
+        public static void write(String path, String personsJson) {
 
-    }
-    File file = new File("./Users.json");
-    FileWriter writer;
+            File file = new File(path);
+            FileWriter writer;
 
-    private String printPersons;
+            try {
+                writer = new FileWriter(file);
+                writer.write(personsJson);
+                writer.flush();
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-    {
-        try {
-            writer = new FileWriter(file);
-            writer.write(printPersons);
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
-    }
 
-
-    public JSONFileWrite(String printPersons) {
-        this.printPersons = printPersons;
     }
-}
