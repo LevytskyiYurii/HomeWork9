@@ -13,7 +13,6 @@ public class FileReader {
         ArrayList<Person> persons = readFile("Humans.txt");
 
         printPersons(persons);
-        String jsonPeople = null;
     }
 
     public static void printPersons(ArrayList<Person> people) {
