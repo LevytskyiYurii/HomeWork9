@@ -2,9 +2,7 @@ package Task_3;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class WordsCount {
     public static void main(String[] args) throws IOException {
@@ -27,12 +25,17 @@ public class WordsCount {
         file.close();
         fin.close();
 
-        HashMap<Integer, String> wordsCount = new HashMap<>();
+        Map<Integer, String> wordsCount = new HashMap<>();
 
         for (int i = 0; i < words.size(); i++) {
-
             wordsCount.put(count.get(i), words.get(i));
         }
-        System.out.println(wordsCount);
-    }
+            Map<Integer, String> sorted = new TreeMap<>(Collections.reverseOrder());
+                sorted.putAll(wordsCount);
+
+            for (Map.Entry<Integer, String> entry : sorted.entrySet()){
+                System.out.println("Word :" + entry.getValue() + ", frequency :" + entry.getKey());
+
+        }
+        }
 }
