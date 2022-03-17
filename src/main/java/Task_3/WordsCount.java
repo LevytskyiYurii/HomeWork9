@@ -3,6 +3,7 @@ package Task_3;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class WordsCount {
@@ -26,9 +27,12 @@ public class WordsCount {
         file.close();
         fin.close();
 
+        HashMap<Integer, String> wordsCount = new HashMap<>();
+
         for (int i = 0; i < words.size(); i++) {
 
-            System.out.println(words.get(i) + " " + count.get(i));
+            wordsCount.put(count.get(i), words.get(i));
         }
+        System.out.println(wordsCount);
     }
 }
